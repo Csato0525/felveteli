@@ -1,8 +1,51 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: beige;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
 h1{
     text-align: center;
-    background-color: aquamarine;
+    text-decoration: underline;
+}
+
+p{
+    text-align: center;
+    font-size: large;
+    font-weight: 1000;
+}
+
+form{
+    text-align: center;    
+}
+
+form p{
+    font-size: large;
+    font-weight: 1000;
+}
+
+form input{
+    width: 25%;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: solid;
+    font-size: 24px;
+    background-color: antiquewhite;
+}
+
+form button{
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: solid;
+    background-color: gainsboro;
 }

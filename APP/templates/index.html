@@ -9,35 +9,40 @@
     <title>Felveteli</title>
 </head>
 <body>
-    <h1>Jelentkezz be!</h1>
+    <h1>Kérem adja meg azonosítóját!</h1>
 
     {% if vaneinput %}
-        
         {% if voltilyen %}
-                
-        <p>Kedves {{nev}}! Az felvételin szerzett {{pontszam}} pontoddal az alábbi szakokra vettek fel:</p>    
-        <p>A: {{A}}</p>
-        <p>B: {{B}}</p>
-        <p>C: {{C}}</p>
-        <p>D: {{D}}</p>
-        <p>E: {{E}}</p>
-        <p>F: {{F}}</p>
+        <p>Kedves {{nev}}! Az felvételin szerzett {{pontszam}}-tal az alábbi szakokra vettek fel:</p>    
+        <p>Matek: {{matek}}</p>
+        <p>Angol: {{angol}}</p>
+        <form method="POST">
+            {% csrf_token %}
+            <p>Másik azonosító megadása!</p>
+            <input type="text" name="diakid" maxlength="3">
+            <button type="submit">Keresés</button>
+        </form>
         {% else %}
-        <p>Nincs ilyen OM azonosító a rendszerben... -_-</p>
+        <p>Ilyen azonosítójú diákot nem találtunk!</p>
+        {% csrf_token %}
+        <form method="POST">
+            {% csrf_token %}
+            <p>Ellenőrizd le a számot és írd be újra!</p>
+            <input type="text" name="diakid" maxlength="3">
+            <button type="submit">Keresés</button>
+        </form>
         {% endif %}
-                
-
     {% else %}
-    
     <form method="POST">
         {% csrf_token %}
-        <p>Adja meg a diákigazolvámnyszámát</p>
-        <input type="number" name="diakid" id="">
+        <p>Adja meg azonosítóját!</p>
+        <input type="text" name="diakid" maxlength="3">
         <button type="submit">Keresés</button>
     </form>
-
     {% endif %}
     
 </body>
+
 <script src="{% static 'js/script.js' %}"></script>
+
 </html>

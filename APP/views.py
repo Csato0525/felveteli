@@ -25,12 +25,8 @@ def VIEW(request):
                 
                 context['nev'] = diak.nev
                 context['pontszam'] = diak.pontszam
-                context['A'] = diak.Atagozat
-                context['B'] = diak.Btagozat
-                context['C'] = diak.Ctagozat
-                context['D'] = diak.Dtagozat
-                context['E'] = diak.Etagozat
-                context['F'] = diak.Ftagozat
+                context['matek'] = diak.matek
+                context['angol'] = diak.angol
 
                 
 
